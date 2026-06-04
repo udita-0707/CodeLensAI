@@ -53,8 +53,9 @@ def _build_llm() -> ChatOpenAI:
             "Copy backend/.env.example to backend/.env and fill in your key."
         )
 
+    model_name = os.getenv("OPENROUTER_MODEL", "anthropic/claude-3.5-sonnet")
     return ChatOpenAI(
-        model="anthropic/claude-3.5-sonnet",
+        model=model_name,
         temperature=0,
         openai_api_key=api_key,
         openai_api_base="https://openrouter.ai/api/v1",

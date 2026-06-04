@@ -25,8 +25,8 @@ export function ScoreBadge({ score }: { score: number }) {
   }, [score]);
 
   return (
-    <div className="relative grid h-28 w-28 place-items-center">
-      <svg className="absolute inset-0 -rotate-90" viewBox="0 0 36 36">
+    <div className="relative grid h-28 w-28 shrink-0 place-items-center">
+      <svg className="absolute inset-0 h-full w-full -rotate-90 overflow-visible" viewBox="0 0 36 36">
         <circle cx="18" cy="18" r="16" fill="none" stroke="var(--muted)" strokeWidth="2.5" />
         <circle
           cx="18"
