@@ -3,6 +3,7 @@ import { ArrowRight, FileCode2, GitBranch, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ReviewMockup } from "@/components/ReviewMockup";
+import { FloatingCodeBackground } from "@/components/FloatingCodeBackground";
 
 export const Route = createFileRoute("/")({
   head: () => ({
