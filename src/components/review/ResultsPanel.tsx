@@ -50,8 +50,8 @@ export function ResultsPanel({
   if (!result) {
     return (
       <div className="glass flex min-h-[420px] flex-col items-center justify-center rounded-2xl p-8 text-center">
-        <div className="bg-gradient-brand/20 flex h-16 w-16 items-center justify-center rounded-2xl border border-border">
-          <ScanSearch className="text-gradient h-8 w-8" style={{ color: "var(--purple)" }} />
+        <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-border bg-secondary/60">
+          <ScanSearch className="h-8 w-8" style={{ color: "var(--purple)" }} />
         </div>
         <p className="mt-5 text-base font-semibold">No review yet</p>
         <p className="mt-1 max-w-xs text-sm text-muted-foreground">
