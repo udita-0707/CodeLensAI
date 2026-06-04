@@ -30,3 +30,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment — never commit real keys
+.env
+backend/.env
+
+# Lovable platform metadata (not needed in the repo)
+.lovable/
+

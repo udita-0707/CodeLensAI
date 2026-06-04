@@ -18,7 +18,7 @@ export function InputPanel({
   onReview,
 }: {
   loading: boolean;
-  onReview: () => void;
+  onReview: (tab: "code" | "pr", code: string, language: string, prUrl: string) => void;
 }) {
   const [tab, setTab] = useState<Tab>("code");
   const [code, setCode] = useState(SAMPLE);
@@ -101,7 +101,7 @@ export function InputPanel({
       <Button
         variant="hero"
         size="lg"
-        onClick={onReview}
+        onClick={() => onReview(tab, code, lang, url)}
         disabled={loading}
         className="relative mt-5 w-full overflow-hidden"
       >
