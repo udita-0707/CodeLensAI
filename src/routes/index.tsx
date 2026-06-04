@@ -3,6 +3,7 @@ import { ArrowRight, FileCode2, GitBranch, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ReviewMockup } from "@/components/ReviewMockup";
+import { FloatingCodeBackground } from "@/components/FloatingCodeBackground";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,30 +57,34 @@ function Landing() {
 
       <main className="relative mx-auto max-w-6xl px-4 pt-36 pb-24 sm:pt-44">
         {/* Hero */}
-        <section className="text-center">
-          <span className="glass animate-fade-in inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground">
-            <span className="bg-gradient-brand h-1.5 w-1.5 rounded-full" />
-            Powered by LangChain + LLMs
-          </span>
-          <h1 className="animate-fade-up mx-auto mt-6 max-w-3xl text-5xl font-extrabold tracking-tight sm:text-7xl">
-            AI Code Reviews.{" "}
-            <span className="text-gradient">Instantly.</span>
-          </h1>
-          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg text-muted-foreground [animation-delay:0.1s]">
-            Paste your code or drop a GitHub PR URL. Get line-level feedback on bugs, security, and
-            style in seconds.
-          </p>
-          <div className="animate-fade-up mt-9 flex flex-wrap items-center justify-center gap-3 [animation-delay:0.2s]">
-            <Button asChild variant="hero" size="xl">
-              <Link to="/app">
-                Try it free <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="heroOutline" size="xl">
-              <a href="https://github.com" target="_blank" rel="noreferrer">
-                View on GitHub
-              </a>
-            </Button>
+        <section className="relative text-center">
+          <FloatingCodeBackground />
+
+          <div className="relative z-10">
+            <span className="glass animate-fade-in inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground">
+              <span className="bg-gradient-brand h-1.5 w-1.5 rounded-full" />
+              Powered by LangChain + LLMs
+            </span>
+            <h1 className="animate-fade-up mx-auto mt-6 max-w-3xl text-5xl font-extrabold tracking-tight sm:text-7xl">
+              AI Code Reviews.{" "}
+              <span className="text-gradient">Instantly.</span>
+            </h1>
+            <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg text-muted-foreground [animation-delay:0.1s]">
+              Paste your code or drop a GitHub PR URL. Get line-level feedback on bugs, security, and
+              style in seconds.
+            </p>
+            <div className="animate-fade-up mt-9 flex flex-wrap items-center justify-center gap-3 [animation-delay:0.2s]">
+              <Button asChild variant="hero" size="xl">
+                <Link to="/app">
+                  Try it free <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="heroOutline" size="xl">
+                <a href="https://github.com" target="_blank" rel="noreferrer">
+                  View on GitHub
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 
