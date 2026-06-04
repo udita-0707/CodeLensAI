@@ -113,8 +113,8 @@ function Landing() {
         </section>
 
         {/* CTA */}
-        <section className="glass mt-28 overflow-hidden rounded-3xl p-10 text-center sm:p-16">
-          <div className="bg-gradient-brand absolute" />
+        <section className="glass relative mt-28 overflow-hidden rounded-3xl p-10 text-center sm:p-16">
+
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Ship cleaner code, faster.
           </h2>
