@@ -1,0 +1,19 @@
+# render.yaml — Render deployment config for CodeLens AI backend
+# Docs: https://render.com/docs/infrastructure-as-code
+
+services:
+  - type: web
+    name: codelens-ai-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free                   # free tier — sleeps after 15 min inactivity
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false              # fill in via Render dashboard (never committed)
+      - key: GITHUB_TOKEN
+        sync: false              # optional — raises GitHub rate limit
+      - key: ALLOWED_ORIGINS
+        sync: false              # set to your Cloudflare Pages URL after deploying frontend
+                                 # e.g. https://codelens-ai.pages.dev,http://localhost:5173

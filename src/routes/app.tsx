@@ -6,7 +6,9 @@ import { InputPanel } from "@/components/review/InputPanel";
 import { ResultsPanel } from "@/components/review/ResultsPanel";
 import { type ReviewResult } from "@/lib/review-data";
 
-const API_BASE = "http://localhost:8000";
+// Set VITE_API_BASE in your deployment platform (e.g. Vercel env vars) to point at the live backend.
+// Falls back to localhost for local development.
+const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
 
 export const Route = createFileRoute("/app")({
   head: () => ({

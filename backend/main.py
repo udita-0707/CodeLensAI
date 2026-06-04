@@ -7,12 +7,13 @@ Endpoints:
   POST /review/pr    — fetch GitHub PR diff and review it
 """
 
+import os
 import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, HttpUrl
+from pydantic import BaseModel
 
 from chain import run_review, ReviewResult
 from github_client import fetch_pr_diff
@@ -25,6 +26,17 @@ logging.basicConfig(
     format="%(asctime)s  %(levelname)-8s  %(name)s  %(message)s",
 )
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# CORS — comma-separated list of allowed origins from env var.
+# Example: ALLOWED_ORIGINS=https://codelens-ai.pages.dev,https://localhost:5173
+# ---------------------------------------------------------------------------
+_raw_origins = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:5173,http://127.0.0.1:5173",
+)
+ALLOWED_ORIGINS = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+logger.info("CORS allowed origins: %s", ALLOWED_ORIGINS)
 
 
 # ---------------------------------------------------------------------------
@@ -45,10 +57,10 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Allow requests from the Vite dev server
+# Allow requests from the configured frontend origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

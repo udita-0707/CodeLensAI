@@ -1,0 +1,4 @@
+/* Cloudflare Pages — SPA fallback routing
+   All routes that don't match a static file are served index.html,
+   letting TanStack Router handle client-side navigation. */
+/*  /index.html  200
