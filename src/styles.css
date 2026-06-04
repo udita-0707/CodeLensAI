@@ -102,7 +102,6 @@
     50% { opacity: 0.09; transform: translateY(-16px) scale(1.03); }
   }
 }
-}
 
 :root {
   --radius: 0.875rem;
