@@ -35,6 +35,15 @@ dist-ssr
 .env
 backend/.env
 
+# Python
+__pycache__/
+*.py[cod]
+backend/.venv/
+backend/venv/
+backend/chroma_db/
+backend/test_chroma/
+backend/test_chroma2/
+
 # Lovable platform metadata (not needed in the repo)
 .lovable/
 
