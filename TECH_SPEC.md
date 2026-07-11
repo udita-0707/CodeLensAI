@@ -1,7 +1,5 @@
 # AI Code Review Dashboard — Tech Spec
 
-**v1.0 · 1-day build · Internship project for CodeRabbit**
-
 **Stack:** Python · FastAPI · React · LangChain · OpenRouter API
 
 ---
@@ -240,5 +238,3 @@ httpx
 - **Severity breakdown chart** — doughnut chart showing issue count by category.
 
 ---
-
-> **The single detail that will impress CodeRabbit most:** line-level feedback displayed on the actual code. Line-level annotation is CodeRabbit's core differentiator — shipping it signals you understand their product deeply.
